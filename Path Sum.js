@@ -8,19 +8,23 @@
  */
 /**
  * @param {TreeNode} root
- * @return {number}
+ * @param {number} targetSum
+ * @return {boolean}
  */
-let maxDepth = (root) => {
-    const traverse = (node, height) => {
+const hasPathSum = (root, targetSum) => {
+    const traverse = (node, sum) => {
         if (!node) {
-            return height;
+            return false;
         }
 
-        return Math.max(
-            height,
-            traverse(node.left, height + 1),
-            traverse(node.right, height + 1)
-        );
+        sum += node.val;
+
+        if (!node.left && !node.right) {
+            return sum == targetSum;
+        }
+
+        return traverse(node.left, sum) || traverse(node.right, sum);
     };
+
     return traverse(root, 0);
 };
