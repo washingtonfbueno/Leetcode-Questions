@@ -1,7 +1,4 @@
-function mergeTwoLists(
-    list1: ListNode | null,
-    list2: ListNode | null
-): ListNode | null {
+const mergeTwoLists = (list1, list2) => {
     let newNode = new ListNode();
     const head = newNode;
 
@@ -20,4 +17,4 @@ function mergeTwoLists(
     newNode.next = list1 || list2;
 
     return head.next;
-}
+};
