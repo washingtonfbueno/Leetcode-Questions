@@ -1,4 +1,18 @@
-function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {boolean}
+ */
+
+const isSameTree = (p, q) => {
     const traverse = (first, second) => {
         if (!first && !second) {
             return true;
@@ -12,4 +26,4 @@ function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
     };
 
     return traverse(p, q);
-}
+};

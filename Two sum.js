@@ -1,5 +1,11 @@
-function twoSum(nums: number[], target: number): number[] {
-    let numbers: { [key: number]: number } = {};
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+const twoSum = (nums, target) => {
+    let numbers = {};
 
     for (let [index, number] of nums.entries()) {
         if (numbers[target - number] != undefined) {
@@ -7,4 +13,4 @@ function twoSum(nums: number[], target: number): number[] {
         }
         numbers[number] = index;
     }
-}
+};

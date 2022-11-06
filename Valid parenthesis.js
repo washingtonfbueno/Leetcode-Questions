@@ -1,5 +1,10 @@
-function isValid(s: string): boolean {
-    let stack: string[] = [];
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+const isValid = (s) => {
+    let stack = [];
     const matches = { "(": ")", "[": "]", "{": "}" };
 
     for (let char of s) {
@@ -12,5 +17,5 @@ function isValid(s: string): boolean {
         }
     }
 
-    return stack.length > 0 ? false : true;
-}
+    return stack.length == 0;
+};

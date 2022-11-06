@@ -1,4 +1,9 @@
-function romanToInt(s: string): number {
+/**
+ * @param {string} s
+ * @return {number}
+ */
+
+const romanToInt = (s) => {
     const romanCombinations = {
         CM: 900,
         CD: 400,
@@ -25,4 +30,4 @@ function romanToInt(s: string): number {
         }
     }
     return number;
-}
+};

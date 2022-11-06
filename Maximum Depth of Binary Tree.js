@@ -10,8 +10,9 @@
  * @param {TreeNode} root
  * @return {number}
  */
-let maxDepth = (root) => {
-    const traverse = (node, height) => {
+
+const maxDepth = (root) => {
+    const traverse = (node, height = 0) => {
         if (!node) {
             return height;
         }
@@ -22,5 +23,5 @@ let maxDepth = (root) => {
             traverse(node.right, height + 1)
         );
     };
-    return traverse(root, 0);
+    return traverse(root);
 };

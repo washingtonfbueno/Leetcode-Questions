@@ -1,4 +1,17 @@
-function isSymmetric(root: TreeNode | null): boolean {
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+
+const isSymmetric = (root) => {
     const traverse = (leftNode, rightNode) => {
         if (leftNode && rightNode) {
             return (
@@ -11,5 +24,6 @@ function isSymmetric(root: TreeNode | null): boolean {
         }
         return false;
     };
+
     return traverse(root.left, root.right);
-}
+};
