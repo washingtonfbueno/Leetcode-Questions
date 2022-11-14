@@ -3,17 +3,21 @@
  * @return {boolean}
  */
 const isHappy = (n) => {
-    let nums = new Set();
+    let numsSet = new Set();
 
     while (n != 1) {
-        nums.add(n);
-        let arr = n.toString().split("");
+        numsSet.add(n);
 
-        n = arr.reduce((prev, curr) => {
-            return prev + Number(curr) ** 2;
-        }, 0);
+        let [curr, sum] = [n, 0];
 
-        if (nums.has(n)) {
+        while (curr) {
+            sum += (curr % 10) ** 2;
+            curr = Math.floor(curr / 10);
+        }
+
+        n = sum;
+
+        if (numsSet.has(n)) {
             return false;
         }
     }
